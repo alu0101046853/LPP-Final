@@ -7,6 +7,8 @@ class alimento
 		@gases = gases
 		@terreno = terreno
 	end
+	
+	attr_reader: :nombre, :gases, :terreno
 
 	def to_s
 	 " #{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"

@@ -10,5 +10,9 @@ class alimento
 
 	def to_s
 	 " #{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"
- 	end	
+ 	end
+
+	def valor_energetico
+		valor=(4*@carbo) + (9*@lipidos) + (4*@proteinas)
+	end	
 end

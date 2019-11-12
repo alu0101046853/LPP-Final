@@ -19,5 +19,13 @@ RSpec.describe Alimentos do
 		it "Valor energetico bien calculado" do
 			expect(@carnevaca.valor_energetico).to eq(112.3)
 		end
+
+		it "Impacto de Hombre Correcto" do
+			expect(@carnevaca.impacto_hombre).to eq(3.7)
+		end
+
+		it "Impacto de mujer Correcto" do
+			expect(@carnevaca.impacto_mujer).to eq(4.7)
+		end
 	end	
 end

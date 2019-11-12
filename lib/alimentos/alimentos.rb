@@ -1,4 +1,4 @@
-class alimento
+class Alimento
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)
 		@nombre = nombre
 		@proteinas = proteinas
@@ -8,10 +8,10 @@ class alimento
 		@terreno = terreno
 	end
 	
-	attr_reader: :nombre, :gases, :terreno
+	attr_reader :nombre, :gases, :terreno
 
 	def to_s
-	 " #{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"
+	 "#{@:nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"
  	end
 
 	def valor_energetico

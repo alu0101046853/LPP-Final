@@ -40,4 +40,21 @@ RSpec.describe Alimentos do
                 end
 
 	end
+
+	describe "Dietas con Listas" do
+		it "Efecto invernadero diario" do
+			@lista.insertar_array(@array)
+			expect((@lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases).round(1)).to eq(54.7)
+		end
+
+		it "Efecto Invernadero Anual" do
+			@lista.insertar_array(@array)
+			expect((@lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases * 365).round(1)).to eq(891.9)
+		end
+
+		it "Uso de Metro cuadrado de la dieta" do
+			 @lista.insertar_array(@array)
+			 expect((@lista.extract_head.value.terreno + @lista.extract_head.value.terreno + @lista.extract_head.value.terreno + @lista.extract_head.value.terreno).round(1)).to eq(173.0)
+		end
+	end
 end

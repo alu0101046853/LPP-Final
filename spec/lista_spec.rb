@@ -1,10 +1,11 @@
 RSpec.describe Alimentos do
-	before :all do
+	before :each do
 		@alimento1 = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@alimento2 = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
 		@alimento3 = Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
 		@alimento4 = Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
 		@lista = Lista.new(0)
+		@array = [@alimento1,@alimento2,@alimento3,@alimento4]
 	end
 
 	describe "Inserccion de nodos" do
@@ -18,5 +19,25 @@ RSpec.describe Alimentos do
 			@lista.insertar(@alimento4)
                         expect(@lista.tail.value.nombre).to eq("Chocolate")
 		end
+
+		it "Elementos insertados de una vez" do
+			@lista.insertar_array(@array)
+			expect(@lista.tail.value.nombre).to eq("Chocolate")
+		end
+	end
+
+	describe "Extraccion de head y tail" do
+		it "Head bien extraido" do
+			@lista.insertar_array(@array)
+			expect(@lista.extract_head.value.nombre).to eq("Carne de Vaca")
+			expect(@lista.head.value.nombre).to eq("Tofu")
+		end
+
+		it "Tail Bien extraido" do
+                        @lista.insertar_array(@array)
+                        expect(@lista.extract_tail.value.nombre).to eq("Chocolate")
+                        expect(@lista.tail.value.nombre).to eq("Lentejas")
+                end
+
 	end
 end

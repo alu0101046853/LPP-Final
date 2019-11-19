@@ -8,6 +8,8 @@ class Lista
 		@tamano=tamano
 	end
 
+	attr_reader :head,:tail,:tamano
+
 	def insertar(valor)
 		nodo = Node.new(valor,nil,nil)
 		if @tamano == 0
@@ -26,7 +28,7 @@ class Lista
 	end
 
 	def extract_head
-		if @head.nil?
+		if @head == nil
 			return nil
 		elsif @head == @tail
 			aux = @head
@@ -44,7 +46,7 @@ class Lista
 	end
 
 	def extract_tail
-		if @tail.nil?
+		if @tail == nil
 			return nil
 		elsif @head == @tail
 			aux = @tail
@@ -61,7 +63,7 @@ class Lista
 		end
 	end
 
-	def insertar_varios(array)
+	def insertar_array(array)
 		for x in 0..array.length-1
 			insertar(array[x])
 		end

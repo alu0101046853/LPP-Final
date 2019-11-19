@@ -10,7 +10,7 @@ class Lista
 
 	def insertar(valor)
 		nodo = Node.new(valor,nil,nil)
-		if self.empty
+		if @tamano == 0
 			nodo.next=nil
 			nodo.prev=nil
 			@head=nodo
@@ -62,7 +62,7 @@ class Lista
 	end
 
 	def insertar_varios(array)
-		for x in 0..array.lenght-1
+		for x in 0..array.length-1
 			insertar(array[x])
 		end
 	end

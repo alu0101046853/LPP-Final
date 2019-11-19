@@ -60,4 +60,10 @@ class Lista
 			return aux
 		end
 	end
+
+	def insertar_varios(array)
+		for x in 0..array.lenght-1
+			insertar(array[x])
+		end
+	end
 end

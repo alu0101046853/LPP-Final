@@ -1,38 +1,12 @@
 # Alimentos
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/alimentos`. To experiment with that code, run `bin/console` for an interactive prompt.
+##Nombre:
+Chesen Castilla Gil
 
-TODO: Delete this and the text above, and describe your gem
+##Práctica de Laboratorio #7. POO. Listas.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'alimentos'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install alimentos
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/alimentos. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+###Objetivo:
+Esta practica de laboratorio se ha de realizar utilizando el lenguaje de programacion Ruby y el paradigma de Programacion Orientada a Objetos. Se ha de partir de la estructura de la gema ya generada con la herramienta Bundler y realizar elcontrol de versiones con git siguiendo su filosofia de ramas.Para el desarrollo de las clases se ha de seguir la metodologia deDesarrollo  dirigido  por  pruebas(Test Driven Development - TDD) y la herramienta RSpec
 
 ## License
 

@@ -79,7 +79,7 @@ class Lista
 	def each
 		aux = @head
 		while(aux != nil)
-			yield aux.value
+			yield aux.value.nombre
 			aux = aux.next
 		end
 	end

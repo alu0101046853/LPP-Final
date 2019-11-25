@@ -61,9 +61,11 @@ RSpec.describe Alimentos do
 	describe "Pruebas con Enumerable" do
 		it"Pruebas con enumerable correctas" do
 			@lista.insertar_array(@array)
-			expect(@lista.min).to eq(@alimento2)
-			expect(@lista.max).to eq(@alimento4)
-			expect(@lista.sort).to eq([@alimento2,@alimento1,@alimento3,@alimento4])
+			expect(@lista.min).to eq("Carne de Vaca")
+			expect(@lista.max).to eq("Tofu")
+			expect(@lista.sort).to eq(["Carne de Vaca","Chocolate","Lentejas","Tofu"])
+			expect(@lista.select{|i| i.between?("Carne de Vaca","Chocolate")}).to eq(["Carne de Vaca","Chocolate"])
+			expect(@lista.collect{|i| i.to_s}).to eq(["Carne de Vaca","Tofu","Lentejas","Chocolate"])
 		end
 	end
 end

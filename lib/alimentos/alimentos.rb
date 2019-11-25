@@ -1,4 +1,6 @@
 class Alimento
+	include Comparable,Enumerable
+
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)
 		@nombre = nombre
 		@proteinas = proteinas

@@ -11,6 +11,10 @@ class Alimento
 	end
 	
 	attr_reader :nombre, :gases, :terreno
+	
+	def <=>(otro)
+		valor_energetico <=> otro.valor_energetico
+	end
 
 	def to_s
 	 "#{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"

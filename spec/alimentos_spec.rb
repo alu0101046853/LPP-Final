@@ -2,9 +2,11 @@ RSpec.describe Alimentos do
 before (:all) do
 		@carnevaca = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@choco = Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+		@tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+		@lentejas = Alimento.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
 	end 
 
-context "Probando readers y to_s" do
+	context "Probando readers y to_s" do
 		it "Readers bien" do
 			expect(@carnevaca.gases).to eq(50.0)
 			expect(@carnevaca.nombre).to eq("Carne de Vaca")
@@ -19,6 +21,7 @@ context "Probando readers y to_s" do
 	context "Probando Valor energetico" do
 		it "Valor energetico bien calculado" do
 			expect(@carnevaca.valor_energetico).to eq(112.3)
+			expect(@choco.valor_energetico).to eq(479.2)
 		end
 
 		it "Impacto de Hombre Correcto" do
@@ -27,6 +30,12 @@ context "Probando readers y to_s" do
 
 		it "Impacto de mujer Correcto" do
 			expect(4*@carnevaca.impacto_mujer+2*@choco.impacto_mujer).to eq(58.8)
+		end
+	end
+
+	context "Probando los Comparable e Enumerable" do
+		it "Comparables Bien" do
+			expect(@carnevaca > @choco).to be false
 		end
 	end
  

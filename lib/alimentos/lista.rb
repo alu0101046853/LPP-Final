@@ -71,4 +71,8 @@ class Lista
 			insertar(array[x])
 		end
 	end
+
+	def to_s
+		"Lista : #{@header},#{@tail},#{@tamano}"
+	end
 end

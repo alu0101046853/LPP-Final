@@ -5,7 +5,7 @@ class Lista
 
 	attr_reader :head,:tail,:tamano
 
-	include Comparable,Enumerable
+	include Enumerable
 
 	def initialize(tamano)
 		@head=nil
@@ -74,5 +74,13 @@ class Lista
 
 	def to_s
 		"Lista : #{@header},#{@tail},#{@tamano}"
+	end
+
+	def each
+		aux = @head
+		while(aux != nil)
+			yield aux.value
+			aux = aux.next
+		end
 	end
 end

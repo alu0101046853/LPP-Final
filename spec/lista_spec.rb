@@ -57,4 +57,13 @@ RSpec.describe Alimentos do
 			 expect((@lista.extract_head.value.terreno + @lista.extract_head.value.terreno + @lista.extract_head.value.terreno + @lista.extract_head.value.terreno).round(1)).to eq(173.0)
 		end
 	end
+
+	describe "Pruebas con Enumerable" do
+		it"Pruebas con enumerable correctas" do
+			@lista.insertar_array(@array)
+			expect(@lista.min).to eq(@alimento2)
+			expect(@lista.max).to eq(@alimento4)
+			expect(@lista.sort).to eq([@alimento2,@alimento1,@alimento3,@alimento4])
+		end
+	end
 end

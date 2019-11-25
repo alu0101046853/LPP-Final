@@ -1,5 +1,5 @@
 class Alimento
-	include Comparable,Enumerable
+	include Comparable
 
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)
 		@nombre = nombre
@@ -12,7 +12,7 @@ class Alimento
 	
 	attr_reader :nombre, :gases, :terreno
 	
-	def <=>(otro)
+	def <=> (otro)
 		valor_energetico <=> otro.valor_energetico
 	end
 

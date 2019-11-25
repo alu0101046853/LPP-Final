@@ -33,9 +33,11 @@ before (:all) do
 		end
 	end
 
-	context "Probando los Comparable e Enumerable" do
+	context "Probando los Comparable" do
 		it "Comparables Bien" do
 			expect(@carnevaca > @choco).to be false
+			expect(@lentejas <= @choco).to be true
+			expect(@tofu >= @carnevaca).to be false 
 		end
 	end
  

@@ -2,6 +2,11 @@
 Node = Struct.new(:value, :next, :prev)
 
 class Lista
+
+	attr_reader :head,:tail,:tamano
+
+	include Comparable,Enumerable
+
 	def initialize(tamano)
 		@head=nil
 		@tail=nil
@@ -61,7 +66,7 @@ class Lista
 		end
 	end
 
-	def insertar_varios(array)
+	def insertar_array(array)
 		for x in 0..array.length-1
 			insertar(array[x])
 		end

@@ -1,4 +1,4 @@
-RSpec.describe Alimentos do
+RSpec.describe Lista do
 	before :each do
 		@alimento1 = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@alimento2 = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)

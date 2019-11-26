@@ -10,7 +10,7 @@ class Alimento
 		@terreno = terreno
 	end
 	
-	attr_reader :nombre, :gases, :terreno
+	attr_reader :nombre, :gases, :terreno, :proteinas,:carbo,:lipidos
 	
 	def <=> (otro)
 		valor_energetico <=> otro.valor_energetico

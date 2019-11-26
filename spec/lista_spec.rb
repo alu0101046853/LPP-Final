@@ -1,4 +1,4 @@
-RSpec.describe Alimentos do
+RSpec.describe Lista do
 	before :each do
 		@alimento1 = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@alimento2 = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
@@ -61,11 +61,11 @@ RSpec.describe Alimentos do
 	describe "Pruebas con Enumerable" do
 		it"Pruebas con enumerable correctas" do
 			@lista.insertar_array(@array)
-			expect(@lista.min).to eq("Carne de Vaca")
-			expect(@lista.max).to eq("Tofu")
-			expect(@lista.sort).to eq(["Carne de Vaca","Chocolate","Lentejas","Tofu"])
-			expect(@lista.select{|i| i.between?("Carne de Vaca","Chocolate")}).to eq(["Carne de Vaca","Chocolate"])
-			expect(@lista.collect{|i| i.to_s}).to eq(["Carne de Vaca","Tofu","Lentejas","Chocolate"])
+			expect(@lista.min).to eq(82.8)
+			expect(@lista.max).to eq(479.2)
+			expect(@lista.sort).to eq([82.8,112.3,314.6,479.2])
+			expect(@lista.select{|i| i.between?(100,400)}).to eq([112.3,314.6])
+			expect(@lista.collect{|i| i.to_s}).to eq(["112.3","82.8","314.6","479.2"])	
 		end
 	end
 end

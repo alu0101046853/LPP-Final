@@ -72,10 +72,10 @@ RSpec.describe Plato do
 
 		it "Enumerar los platos de distintas dietas" do
 			@dietaconplatos.insertar_array([@platoespanola,@platovegeta,@platovasca,@platolocura])
-			expect(@dietaconplatos.max).to eq(3280.4)
-			expect(@dietaconplatos.min).to eq(1419.7)
-			expect(@dietaconplatos.sort).to eq([1419.7,1614.7,2618.4,3280.4])
-			expect(@dietaconplatos.select {|i| i.between?(1500,3000)}).to eq([1614.7,2618.4])	
+			expect(@dietaconplatos.max).to eq(@platoespanola)
+			expect(@dietaconplatos.min).to eq(@platovegeta)
+			expect(@dietaconplatos.sort).to eq([@platovegeta,@platovasca,@platolocura,@platoespanola])
+			expect(@dietaconplatos.select {|i| i.valor_energetico.between?(1500,3000)}).to eq([@platovasca,@platolocura])	
 		end
 	end	
 end

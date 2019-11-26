@@ -2,6 +2,11 @@
 Node = Struct.new(:value, :next, :prev)
 
 class Lista
+
+	attr_reader :head,:tail,:tamano
+
+	include Enumerable
+
 	def initialize(tamano)
 		@head=nil
 		@tail=nil
@@ -72,4 +77,15 @@ class Lista
 	def to_s
 		"Lista : #{@header},#{@tail},#{@tamano}"
 	end
+<<<<<<< HEAD
+=======
+
+	def each
+		aux = @head
+		while(aux != nil)
+			yield aux.value.valor_energetico
+			aux = aux.next
+		end
+	end
+>>>>>>> desarrollos
 end

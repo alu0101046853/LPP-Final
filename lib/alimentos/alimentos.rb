@@ -1,4 +1,6 @@
 class Alimento
+	include Comparable
+
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)
 		@nombre = nombre
 		@proteinas = proteinas
@@ -8,7 +10,11 @@ class Alimento
 		@terreno = terreno
 	end
 	
-	attr_reader :nombre, :gases, :terreno
+	attr_reader :nombre, :gases, :terreno, :proteinas,:carbo,:lipidos
+	
+	def <=> (otro)
+		valor_energetico <=> otro.valor_energetico
+	end
 
 	def to_s
 	 "#{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"

@@ -77,8 +77,6 @@ class Lista
 	def to_s
 		"Lista : #{@header},#{@tail},#{@tamano}"
 	end
-<<<<<<< HEAD
-=======
 
 	def each
 		aux = @head
@@ -87,5 +85,4 @@ class Lista
 			aux = aux.next
 		end
 	end
->>>>>>> desarrollos
 end

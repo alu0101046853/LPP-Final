@@ -76,6 +76,7 @@ RSpec.describe Plato do
 			expect(@dietaconplatos.min).to eq(@platovegeta)
 			expect(@dietaconplatos.sort).to eq([@platovegeta,@platovasca,@platolocura,@platoespanola])
 			expect(@dietaconplatos.select {|i| i.valor_energetico.between?(1500,3000)}).to eq([@platovasca,@platolocura])	
+			expect(@dietaconplatos.collect {|i| i.nombre}).to eq(["Carne de Vaca con Tofu","Leche con Chocolate","Salmon y Lentejas","Carne con Lentejas"])
 		end
 	end	
 end

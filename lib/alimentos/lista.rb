@@ -81,7 +81,7 @@ class Lista
 	def each
 		aux = @head
 		while(aux != nil)
-			yield aux.value.valor_energetico
+			yield aux.value
 			aux = aux.next
 		end
 	end

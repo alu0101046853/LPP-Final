@@ -61,11 +61,11 @@ RSpec.describe Lista do
 	describe "Pruebas con Enumerable" do
 		it"Pruebas con enumerable correctas" do
 			@lista.insertar_array(@array)
-			expect(@lista.min).to eq(82.8)
-			expect(@lista.max).to eq(479.2)
-			expect(@lista.sort).to eq([82.8,112.3,314.6,479.2])
-			expect(@lista.select{|i| i.between?(100,400)}).to eq([112.3,314.6])
-			expect(@lista.collect{|i| i.to_s}).to eq(["112.3","82.8","314.6","479.2"])	
+			expect(@lista.min).to eq(@alimento2)
+			expect(@lista.max).to eq(@alimento4)
+			expect(@lista.sort).to eq([@alimento2,@alimento1,@alimento3,@alimento4])
+			expect(@lista.select{|i| i.valor_energetico.between?(100,400)}).to eq([@alimento1,@alimento3])
+			expect(@lista.collect{|i| i.nombre}).to eq(["Carne de Vaca","Tofu","Lentejas","Chocolate"])	
 		end
 	end
 end

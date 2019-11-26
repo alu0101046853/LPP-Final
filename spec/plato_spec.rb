@@ -1,26 +1,11 @@
 RSpec.describe Plato do
-       before :each do
-	       	@carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
- 		@tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
-		@lentejas = Alimento.new("Lentejas",23.5,55.0,1.4,0.4,3.4)
-		@choco = Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
-		@queso = Alimento.new("Queso",25.0,0.0,33.0,11.0,41.0)
-		@leche = Alimento.new("Leche de Vaca",3.3,8.0,3.2,3.2,8.9)
-		@salmon = Alimento.new("Salmon",19.9,0.0,13.6,6.0,3.7)
-
-		@plato = Plato.new("Carne con Tofu",[@carne,@tofu],[200,100])
-		@platoh = PlatoEficiencia.new("Carne con Tofu",[@carne,@tofu],[200,100])
-
-
-		@platoespanola = Plato.new("Carne de Vaca con Tofu",[@carne,@tofu],[100,500])
-		@platovasca = Plato.new("Salmon y Lentejas",[@salmon,@lentejas],[200,100])
-		@platovegeta = Plato.new("Leche con Chocolate",[@choco,@leche],[200,50])
-		@platolocura = Plato.new("Carne con Lentejas",[@carne,@lentejas],[300,300])
-
-		@dietaconplatos = Lista.new(0)
-       end
-
 	describe "Plato Bien Montado" do
+		before :all do
+                @carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
+		@tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+                @plato = Plato.new("Carne con Tofu",[@carne,@tofu],[200,100])
+		end
+
 	 	it "Nombre Bien cojido" do
 			expect(@plato.nombre).to eq("Carne con Tofu")
 		end
@@ -41,6 +26,12 @@ RSpec.describe Plato do
 	end
 
 	describe "Pruebas de Herencia" do
+		before :all do
+		@carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
+                @tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+		@platoh = PlatoEficiencia.new("Carne con Tofu",[@carne,@tofu],[200,100])
+		end
+
 		it "Pruebas de Gases y Terreno" do
 			expect(@platoh.gases).to eq(52.0)
 			expect(@platoh.terreno).to eq(166.2)
@@ -57,6 +48,22 @@ RSpec.describe Plato do
 	end
 
 	describe "Pruebas De Compare and Enumerar" do
+		before :all do
+		@carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
+                @tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+                @lentejas = Alimento.new("Lentejas",23.5,55.0,1.4,0.4,3.4)
+                @choco = Alimento.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+                @queso = Alimento.new("Queso",25.0,0.0,33.0,11.0,41.0)
+                @leche = Alimento.new("Leche de Vaca",3.3,8.0,3.2,3.2,8.9)
+                @salmon = Alimento.new("Salmon",19.9,0.0,13.6,6.0,3.7)
+		@platoespanola = Plato.new("Carne de Vaca con Tofu",[@carne,@tofu],[100,500])
+                @platovasca = Plato.new("Salmon y Lentejas",[@salmon,@lentejas],[200,100])
+                @platovegeta = Plato.new("Leche con Chocolate",[@choco,@leche],[200,50])
+                @platolocura = Plato.new("Carne con Lentejas",[@carne,@lentejas],[300,300])
+
+                @dietaconplatos = Lista.new(0)
+		end
+
 		it "Comparar bien" do
 			expect(@platoespanola >= @platovegeta).to be true
 			expect(@platovasca < @platovegeta).to be false

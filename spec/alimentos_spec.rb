@@ -38,6 +38,9 @@ before (:all) do
 			expect(@carnevaca > @choco).to be false
 			expect(@lentejas <= @choco).to be true
 			expect(@tofu >= @carnevaca).to be false 
+			expect(@carnevaca.between?(@tofu,@lentejas)).to be true
+			expect(@tofu.between?(@choco,@lentejas)).to be false
+			expect([@carnevaca,@lentejas,@tofu,@choco].sort).to eq([@tofu,@carnevaca,@lentejas,@choco])
 		end
 	end
  

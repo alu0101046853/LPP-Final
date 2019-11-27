@@ -8,7 +8,7 @@ RSpec.describe Lista do
 		@array = [@alimento1,@alimento2,@alimento3,@alimento4]
 	end
 
-	describe "Inserccion de nodos" do
+	context "Inserccion de nodos" do
 		it "Elementos Bien insertados" do
 			@lista.insertar(@alimento1)
 			expect(@lista.head.value.nombre).to eq("Carne de Vaca")
@@ -26,7 +26,7 @@ RSpec.describe Lista do
 		end
 	end
 
-	describe "Extraccion de head y tail" do
+	context "Extraccion de head y tail" do
 		it "Head bien extraido" do
 			@lista.insertar_array(@array)
 			expect(@lista.extract_head.value.nombre).to eq("Carne de Vaca")
@@ -41,7 +41,7 @@ RSpec.describe Lista do
 
 	end
 
-	describe "Dietas con Listas" do
+	context "Dietas con Listas" do
 		it "Efecto invernadero diario" do
 			@lista.insertar_array(@array)
 			expect((@lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases + @lista.extract_head.value.gases).round(1)).to eq(54.7)
@@ -58,7 +58,7 @@ RSpec.describe Lista do
 		end
 	end
 
-	describe "Pruebas con Enumerable" do
+	context "Pruebas con Enumerable" do
 		it"Pruebas con enumerable correctas" do
 			@lista.insertar_array(@array)
 			expect(@lista.min).to eq(@alimento2)

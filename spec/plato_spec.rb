@@ -1,5 +1,5 @@
 RSpec.describe Plato do
-	describe "Plato Bien Montado" do
+	context "Plato Bien Montado" do
 		before :all do
                 @carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
 		@tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
@@ -25,7 +25,7 @@ RSpec.describe Plato do
 		end
 	end
 
-	describe "Pruebas de Herencia" do
+	context "Pruebas de Herencia" do
 		before :all do
 		@carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
                 @tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)
@@ -47,7 +47,7 @@ RSpec.describe Plato do
 		end
 	end
 
-	describe "Pruebas De Compare and Enumerar" do
+	context "Pruebas De Compare and Enumerar" do
 		before :all do
 		@carne = Alimento.new("Carne de Vaca",21.1,0.0,3.1,50.0,164.0)
                 @tofu = Alimento.new("Tofu",8.0,1.9,4.8,2.0,2.2)

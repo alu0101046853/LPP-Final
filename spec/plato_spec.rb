@@ -44,6 +44,7 @@ RSpec.describe Plato do
 		it "Comprobacion de Jerarquia y Clases" do
 			expect(@platoh.is_a? PlatoEficiencia).to eq(true)
 			expect(@platoh.kind_of? Plato).to eq(true)
+			expect(@platoh.class).to eq(PlatoEficiencia)	
 		end
 	end
 

@@ -1,4 +1,5 @@
-class Alimento
+#Clase Alimento la cual representa un alimento con sus atibutos
+class Alimento	
 	include Comparable
 
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)

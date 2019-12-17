@@ -1,20 +1,26 @@
 # create a Struct with :value, :next and :prev
 Node = Struct.new(:value, :next, :prev)
 
+#Clase para representar una lista doblemente enlazada
 class Lista
 
-	attr_reader :head,:tail,:tamano
-
+	#Incluimos el modulo Enumerable para poder enumerar la clase lista
 	include Enumerable
 
+	#El contructor de la clase
 	def initialize(tamano)
+		#El nodo en la cabaze de la lista
 		@head=nil
+		#El nodo en la cola de la lista
 		@tail=nil
+		#El tamano de la lista
 		@tamano=tamano
 	end
 
+	#Funcion att_reader para acceder a los atributos de la clase
 	attr_reader :head,:tail,:tamano
 
+	#Insertamos un Valor en la lista por la cola
 	def insertar(valor)
 		nodo = Node.new(valor,nil,nil)
 		if @tamano == 0
@@ -32,6 +38,7 @@ class Lista
 		end
 	end
 
+	#Funcion para extraer la cabeza de la lista
 	def extract_head
 		if @head == nil
 			return nil
@@ -50,6 +57,7 @@ class Lista
 		end
 	end
 
+	#Funcion para extraer la cola de la lista
 	def extract_tail
 		if @tail == nil
 			return nil
@@ -68,16 +76,19 @@ class Lista
 		end
 	end
 
+	#Funcion para insertar varios elementos seguidos en forma de array
 	def insertar_array(array)
 		for x in 0..array.length-1
 			insertar(array[x])
 		end
 	end
 
+	#Formateado de la clase Lista
 	def to_s
 		"Lista : #{@header},#{@tail},#{@tamano}"
 	end
 
+	#Funcion Each para el recorrido del Enumerable
 	def each
 		aux = @head
 		while(aux != nil)

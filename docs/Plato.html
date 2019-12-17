@@ -114,6 +114,8 @@
 
   <section class="description">
     
+<p>Clase PAra representar un <a href="Plato.html"><code>Plato</code></a> con una lista de alimentos y una lista de los gramos</p>
+
   </section>
 
   
@@ -139,7 +141,7 @@
 
         <div class="method-description">
         
-        
+        <p>Funcion attr_reader para acceder a los atributos</p>
         
         </div>
       </div>
@@ -152,7 +154,7 @@
 
         <div class="method-description">
         
-        
+        <p>Funcion attr_reader para acceder a los atributos</p>
         
         </div>
       </div>
@@ -165,7 +167,7 @@
 
         <div class="method-description">
         
-        
+        <p>Funcion attr_reader para acceder a los atributos</p>
         
         </div>
       </div>
@@ -193,17 +195,20 @@
 
         <div class="method-description">
           
-          
+          <p>El constructor de la clase <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 4</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-comment">#Nombre del Plato</span>
         <span class="ruby-ivar">@nombre</span>=<span class="ruby-identifier">nombre</span>
+        <span class="ruby-comment">#Lista de alimentos que contiene el plato</span>
         <span class="ruby-ivar">@alimentos</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
         <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">insertar_array</span>(<span class="ruby-identifier">alimentos</span>)
+        <span class="ruby-comment">#Lista de Los gramos de cada alimento</span>
         <span class="ruby-ivar">@gramos</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
         <span class="ruby-ivar">@gramos</span>.<span class="ruby-identifier">insertar_array</span>(<span class="ruby-identifier">gramos</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -238,13 +243,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para comparar platos</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">otro</span>)
         <span class="ruby-identifier">valor_energetico</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">otro</span>.<span class="ruby-identifier">valor_energetico</span>
 <span class="ruby-keyword">end</span></pre>
@@ -271,13 +276,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para calcular los gramos totales del plato</p>
           
           
 
           
           <div class="method-source-code" id="gramos_totales-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gramos_totales</span>
         <span class="ruby-identifier">gramostotales</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@gramos</span>.<span class="ruby-identifier">head</span>
@@ -310,13 +315,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para calcular los gramos de Hidratos de Carbono del <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="hidratos-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hidratos</span>
         <span class="ruby-identifier">carbo</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>
@@ -351,13 +356,13 @@
 
         <div class="method-description">
           
-          
+          <p>Calculo de la Huella Nutricional</p>
           
           
 
           
           <div class="method-source-code" id="huella-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 80</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">huella</span>
 
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">valor_energetico</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">670</span>
@@ -400,13 +405,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para calcular los gramos de Lipidos del <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="lipidos-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lipidos</span>
         <span class="ruby-identifier">lipidos</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>
@@ -441,13 +446,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para calcular los gramos de Proteinas del <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="proteinas-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">proteinas</span>
         <span class="ruby-identifier">nproteinas</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> =<span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>
@@ -482,13 +487,13 @@
 
         <div class="method-description">
           
-          
+          <p>Formateado de la Clase <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 76</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-node">&quot;#{@nombre} : #{proteinas},#{hidratos},#{lipidos}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -515,13 +520,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion Para calcular el Valor energetico del <a href="Plato.html"><code>Plato</code></a></p>
           
           
 
           
           <div class="method-source-code" id="valor_energetico-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 64</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valor_energetico</span>
         <span class="ruby-identifier">valor</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>

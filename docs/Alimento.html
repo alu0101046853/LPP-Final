@@ -108,6 +108,8 @@
 
   <section class="description">
     
+<p>Clase <a href="Alimento.html"><code>Alimento</code></a> la cual representa un alimento con sus atibutos</p>
+
   </section>
 
   
@@ -133,7 +135,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -146,7 +148,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -159,7 +161,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -172,7 +174,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -185,7 +187,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -198,7 +200,7 @@
 
         <div class="method-description">
         
-        
+        <p>Un attr_reader para poder acceder a los atributos en forma de lectura</p>
         
         </div>
       </div>
@@ -226,19 +228,25 @@
 
         <div class="method-description">
           
-          
+          <p>El constructor de la clase alimento</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 4</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">proteinas</span>,<span class="ruby-identifier">carbo</span>,<span class="ruby-identifier">lipidos</span>,<span class="ruby-identifier">gases</span>,<span class="ruby-identifier">terreno</span>)
+        <span class="ruby-comment">#Variable con el nombre del Plato</span>
         <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
+        <span class="ruby-comment">#Gramos de Proteinas</span>
         <span class="ruby-ivar">@proteinas</span> = <span class="ruby-identifier">proteinas</span>
+        <span class="ruby-comment">#Gramos de Carbohidratos</span>
         <span class="ruby-ivar">@carbo</span> = <span class="ruby-identifier">carbo</span>
+        <span class="ruby-comment">#Gramos de lipidos</span>
         <span class="ruby-ivar">@lipidos</span> = <span class="ruby-identifier">lipidos</span>
+        <span class="ruby-comment">#Emisones de Gases del alimento</span>
         <span class="ruby-ivar">@gases</span> = <span class="ruby-identifier">gases</span>
+        <span class="ruby-comment">#Uso de Terreno del Alimento</span>
         <span class="ruby-ivar">@terreno</span> = <span class="ruby-identifier">terreno</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -272,13 +280,13 @@
 
         <div class="method-description">
           
-          
+          <p>La Funcion para comparar distintos <a href="Alimentos.html"><code>Alimentos</code></a></p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">otro</span>)
         <span class="ruby-identifier">valor_energetico</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">otro</span>.<span class="ruby-identifier">valor_energetico</span>
 <span class="ruby-keyword">end</span></pre>
@@ -305,13 +313,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion Para calcular el impacto del alimento en la dieta diara de un hombre</p>
           
           
 
           
           <div class="method-source-code" id="impacto_hombre-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 28</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">impacto_hombre</span>
         <span class="ruby-identifier">imp</span>=<span class="ruby-identifier">valor_energetico</span><span class="ruby-operator">/</span><span class="ruby-value">3000</span><span class="ruby-operator">*</span><span class="ruby-value">100</span>
         <span class="ruby-identifier">imp</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">1</span>)
@@ -339,13 +347,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion Para calcular el impacto del alimento en la dieta diara de una Mujer</p>
           
           
 
           
           <div class="method-source-code" id="impacto_mujer-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">impacto_mujer</span>
         <span class="ruby-identifier">imp</span>=<span class="ruby-identifier">valor_energetico</span><span class="ruby-operator">/</span><span class="ruby-value">2400</span><span class="ruby-operator">*</span><span class="ruby-value">100</span>
         <span class="ruby-identifier">imp</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">1</span>)
@@ -373,13 +381,13 @@
 
         <div class="method-description">
           
-          
+          <p>El formateado del alimento</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
  <span class="ruby-node">&quot;#{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -406,13 +414,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para calcular el valor energetico del alimento</p>
           
           
 
           
           <div class="method-source-code" id="valor_energetico-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/alimentos.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valor_energetico</span>
         <span class="ruby-identifier">valor</span>=(<span class="ruby-value">4.0</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@carbo</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">9.0</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@lipidos</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">4.0</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@proteinas</span>)
         <span class="ruby-identifier">valor</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">1</span>)

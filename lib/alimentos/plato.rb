@@ -1,20 +1,29 @@
+#Clase PAra representar un Plato con una lista de alimentos y una lista de los gramos
 class Plato
+	#Incluimos el modulo Comparable para poder comparar Platos
 	include Comparable
 
+	#El constructor de la clase Plato
 	def initialize(nombre,alimentos,gramos)
+		#Nombre del Plato
 		@nombre=nombre
+		#Lista de alimentos que contiene el plato
 		@alimentos = Lista.new(0)
 		@alimentos.insertar_array(alimentos)
+		#Lista de Los gramos de cada alimento
 		@gramos = Lista.new(0)
 		@gramos.insertar_array(gramos)
 	end
-
+	
+	#Funcion attr_reader para acceder a los atributos
 	attr_reader :nombre,:alimentos,:gramos
 
+	#Funcion para comparar platos
 	def <=> (otro)
 		valor_energetico <=> otro.valor_energetico
 	end
 
+	#Funcion para calcular los gramos de Proteinas del Plato
 	def proteinas
 		nproteinas=0
 		aux =@alimentos.head
@@ -27,6 +36,7 @@ class Plato
 		(nproteinas/gramos_totales*100).round(1)
 	end
 
+	#Funcion para calcular los gramos de Lipidos del Plato
 	def lipidos
 		lipidos=0
 		aux = @alimentos.head
@@ -39,6 +49,7 @@ class Plato
 		(lipidos/gramos_totales*100).round(1)
 	end
 
+	#Funcion para calcular los gramos de Hidratos de Carbono del Plato
 	def hidratos
 		carbo = 0
 		aux = @alimentos.head
@@ -51,6 +62,7 @@ class Plato
 		  (carbo/gramos_totales*100).round(1)
 	end
 
+	#Funcion para calcular los gramos totales del plato
 	def gramos_totales
 		gramostotales=0
 		aux = @gramos.head
@@ -61,6 +73,7 @@ class Plato
 		gramostotales.round(1)
 	end
 
+	#Funcion Para calcular el Valor energetico del Plato
 	def valor_energetico
 		valor=0
 		aux = @alimentos.head
@@ -73,10 +86,12 @@ class Plato
 		valor.round(1)
 	end
 
+	#Formateado de la Clase Plato
 	def to_s
 		"#{@nombre} : #{proteinas},#{hidratos},#{lipidos}"
 	end
 
+	#Calculo de la Huella Nutricional
 	def huella
 
 		if valor_energetico < 670
@@ -98,12 +113,15 @@ class Plato
 	end
 end
 
+#Una Clase Hija que Hereda De Plato
 class PlatoEficiencia < Plato
-	
+	#El constructor de la clase PlatoEficiencia
 	def initialize(nombre,alimentos,gramos)
+		#Delegamos la construccion en el Padre
 		super(nombre,alimentos,gramos)
 	end
 
+	#Funcion Para el Calculo de impacto de gases del PlatoEficiencia
 	def gases
 		valor=0
 		aux = @alimentos.head
@@ -114,6 +132,7 @@ class PlatoEficiencia < Plato
 		valor
 	end
 
+	#Funcion para el calculo de Impacto de Terreno del PlatoEficiencia
 	def terreno
 		valor=0
 		aux = @alimentos.head
@@ -124,6 +143,7 @@ class PlatoEficiencia < Plato
 		valor
 	end
 
+	#Formateado de la Clase PlatoEficiencia
 	def to_s
 		"#{@nombre} : #{proteinas},#{hidratos},#{lipidos},#{gases},#{terreno}"
 	end

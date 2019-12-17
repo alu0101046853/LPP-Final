@@ -93,6 +93,8 @@
 
   <section class="description">
     
+<p>Una Clase Hija que Hereda De <a href="Plato.html"><code>Plato</code></a></p>
+
   </section>
 
   
@@ -125,7 +127,7 @@
 
         <div class="method-description">
           
-          
+          <p>El constructor de la clase <a href="PlatoEficiencia.html"><code>PlatoEficiencia</code></a></p>
           
           
             <div class="method-calls-super">
@@ -136,8 +138,9 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 103</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 119</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">gramos</span>)
+        <span class="ruby-comment">#Delegamos la construccion en el Padre</span>
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">gramos</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -171,13 +174,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion Para el Calculo de impacto de gases del <a href="PlatoEficiencia.html"><code>PlatoEficiencia</code></a></p>
           
           
 
           
           <div class="method-source-code" id="gases-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gases</span>
         <span class="ruby-identifier">valor</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>
@@ -210,13 +213,13 @@
 
         <div class="method-description">
           
-          
+          <p>Funcion para el calculo de Impacto de Terreno del <a href="PlatoEficiencia.html"><code>PlatoEficiencia</code></a></p>
           
           
 
           
           <div class="method-source-code" id="terreno-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 117</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">terreno</span>
         <span class="ruby-identifier">valor</span>=<span class="ruby-value">0</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@alimentos</span>.<span class="ruby-identifier">head</span>
@@ -249,13 +252,13 @@
 
         <div class="method-description">
           
-          
+          <p>Formateado de la Clase <a href="PlatoEficiencia.html"><code>PlatoEficiencia</code></a></p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 127</span>
+            <pre><span class="ruby-comment"># File lib/alimentos/plato.rb, line 147</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-node">&quot;#{@nombre} : #{proteinas},#{hidratos},#{lipidos},#{gases},#{terreno}&quot;</span>
 <span class="ruby-keyword">end</span></pre>

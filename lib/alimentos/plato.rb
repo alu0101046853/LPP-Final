@@ -76,6 +76,26 @@ class Plato
 	def to_s
 		"#{@nombre} : #{proteinas},#{hidratos},#{lipidos}"
 	end
+
+	def huella
+
+		if valor_energetico < 670
+			aux1=1
+		elsif valor_energetico < 830
+			aux1=2
+		else
+			aux1=3
+		end
+
+		if hidratos < 800
+			aux2=1
+		elsif hidratos < 1200
+			aux2=2
+		else
+			aux2=3
+		end
+		aux1+aux2/2	
+	end
 end
 
 class PlatoEficiencia < Plato

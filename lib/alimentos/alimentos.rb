@@ -3,7 +3,7 @@ class Alimento
 	#Incluimos el modulo Comparable para poder comparar objetos de la misma clase	
 	include Comparable
 	
-	#El constructor de la clase alimento
+	#El constructor de la clase Alimento
 	def initialize(nombre,proteinas,carbo,lipidos,gases,terreno)
 		#Variable con el nombre del Plato
 		@nombre = nombre
@@ -13,7 +13,7 @@ class Alimento
 		@carbo = carbo
 		#Gramos de lipidos
 		@lipidos = lipidos
-		#Emisones de Gases del alimento
+		#Emisones de Gases del Alimento
 		@gases = gases
 		#Uso de Terreno del Alimento
 		@terreno = terreno
@@ -22,17 +22,17 @@ class Alimento
 	#Un attr_reader para poder acceder a los atributos en forma de lectura
 	attr_reader :nombre, :gases, :terreno, :proteinas,:carbo,:lipidos
 	
-	#La Funcion para comparar distintos Alimentos
+	#La Funcion para comparar distintos Alimento
 	def <=> (otro)
 		valor_energetico <=> otro.valor_energetico
 	end
 	
-	#El formateado del alimento
+	#El formateado del Alimento
 	def to_s
 	 "#{@nombre}: #{@proteinas}, #{@carbo}, #{@lipidos}, #{@gases}, #{@terreno}"
  	end
 
-	#Funcion para calcular el valor energetico del alimento
+	#Funcion para calcular el valor energetico del Alimento
 	def valor_energetico
 		valor=(4.0 * @carbo) + (9.0 * @lipidos) + (4.0 * @proteinas)
 		valor.round(1)

@@ -1,16 +1,16 @@
-#Clase PAra representar un Plato con una lista de alimentos y una lista de los gramos
+#Clase Para representar un Plato con una Lista de Alimento y una Lista de los gramos
 class Plato
-	#Incluimos el modulo Comparable para poder comparar Platos
+	#Incluimos el modulo Comparable para poder comparar Plato
 	include Comparable
 
 	#El constructor de la clase Plato
 	def initialize(nombre,alimentos,gramos)
 		#Nombre del Plato
 		@nombre=nombre
-		#Lista de alimentos que contiene el plato
+		#Lista de Alimento que contiene el Plato
 		@alimentos = Lista.new(0)
 		@alimentos.insertar_array(alimentos)
-		#Lista de Los gramos de cada alimento
+		#Lista de Los gramos de cada Alimento
 		@gramos = Lista.new(0)
 		@gramos.insertar_array(gramos)
 	end
@@ -18,7 +18,7 @@ class Plato
 	#Funcion attr_reader para acceder a los atributos
 	attr_reader :nombre,:alimentos,:gramos
 
-	#Funcion para comparar platos
+	#Funcion para comparar entre Plato
 	def <=> (otro)
 		valor_energetico <=> otro.valor_energetico
 	end
@@ -62,7 +62,7 @@ class Plato
 		  (carbo/gramos_totales*100).round(1)
 	end
 
-	#Funcion para calcular los gramos totales del plato
+	#Funcion para calcular los gramos totales del Plato
 	def gramos_totales
 		gramostotales=0
 		aux = @gramos.head

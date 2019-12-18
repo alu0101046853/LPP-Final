@@ -30,10 +30,7 @@ RSpec.describe Plato do
 			indice = @menu.index(platomax)
 			preciomax = @precios[indice]
 			expect(preciomax).to eq(10.0)
-			for x in 0..@precios.length-1
-				@precios[x]=(@precios[x]+(@precios[x]*(preciomax/100))).round(2)
-			end
-			expect(@precios).to eq([11.0,24.75,2.86,17.49])	
+			expect(@precios.collect{|i| i * (preciomax*0.2)}).to eq([20.0,45.0,5.2,31.8])	
 		end
 	end
 end	

@@ -8,9 +8,9 @@ class Platodsl
 		#Nombre del Plato
 		@nombre=nombre
 		#Lista de Alimento que contiene el Plato
-		@alimentos = []
+		@alimentos = Lista.new(0)
 		#Lista de Los gramos de cada Alimento
-		@gramos = []
+		@gramos = Lista.new(0)
 
 		if block_given?
 			if block.arity == 1
@@ -29,13 +29,22 @@ class Platodsl
 		valor_energetico <=> otro.valor_energetico
 	end
 
+	def titulo(otro_nombre)
+		@nombre = otro_nombre
+	end
+
+	def alimento(options ={})
+		aux = Alimento.new(options[:descripcion],options[:prote],options[:carbo],options[:lipidos],options[:gases],options[:terreno])
+		@alimentos.insertar(aux)
+		@gramos.insertar(options[:gramos])
+	end
 	#Funcion para calcular los gramos de Proteinas del Plato
 	def proteinas
 		nproteinas=0
 		aux =@alimentos.head
 		auxgramos = @gramos.head
 		while(aux!=nil)
-			nproteinas += aux.value.proteinas * (auxgramos.value/(aux.value.proteinas+aux.value.lipidos+aux.value.carbo))
+			nproteinas += aux.value.proteinas * (auxgramos.value / (aux.value.proteinas+aux.value.lipidos+aux.value.carbo))
 			aux = aux.next
 			auxgramos = auxgramos.next
 		end
@@ -94,7 +103,9 @@ class Platodsl
 
 	#Formateado de la Clase Plato
 	def to_s
-		"#{@nombre} : #{proteinas},#{hidratos},#{lipidos}"
+		output = "Valor Nutricional del plato: #{@nombre}\n"
+		output << "Valor energetico: #{valor_energetico}\n"
+	      	output << "Valor ambiental: #{huella}\n"	
 	end
 
 	#Calculo de la Huella Nutricional
@@ -116,41 +127,5 @@ class Platodsl
 			aux2=3
 		end
 		aux1+aux2/2	
-	end
-end
-
-#Una Clase Hija que Hereda De Plato
-class PlatoEficiencia < Plato
-	#El constructor de la clase PlatoEficiencia
-	def initialize(nombre,alimentos,gramos)
-		#Delegamos la construccion en el Padre
-		super(nombre,alimentos,gramos)
-	end
-
-	#Funcion Para el Calculo de impacto de gases del PlatoEficiencia
-	def gases
-		valor=0
-		aux = @alimentos.head
-		while(aux!=nil)
-			valor += aux.value.gases
-			aux = aux.next
-		end
-		valor
-	end
-
-	#Funcion para el calculo de Impacto de Terreno del PlatoEficiencia
-	def terreno
-		valor=0
-		aux = @alimentos.head
-		while(aux!=nil)
-			valor += aux.value.terreno
-			aux = aux.next
-		end
-		valor
-	end
-
-	#Formateado de la Clase PlatoEficiencia
-	def to_s
-		"#{@nombre} : #{proteinas},#{hidratos},#{lipidos},#{gases},#{terreno}"
 	end
 end

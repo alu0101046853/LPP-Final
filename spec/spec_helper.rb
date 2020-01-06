@@ -1,5 +1,8 @@
+require 'coveralls'
+Coveralls.wear!
 require "bundler/setup"
 require "alimentos"
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

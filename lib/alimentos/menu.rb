@@ -1,3 +1,4 @@
+#Clase para representar un Menu con DSL
 class Menu
 	attr_accessor :nombre,:platos,:precio
 	def initialize(nombre,&block)
